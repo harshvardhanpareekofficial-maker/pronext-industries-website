@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Frame } from "@/components/Frame";
-import { IconArrow } from "@/components/Icons";
 import { PageHero } from "@/components/PageHero";
-import { Reveal } from "@/components/Reveal";
 import { products } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -21,27 +19,24 @@ export default function ProductsPage() {
       />
       <section className="section">
         <div className="shell">
-          {products.map((product, index) => (
-            <Reveal key={product.slug} variant={index === 0 ? "rise" : "enter"}>
-              <article className={index === 1 ? "collection collection-alt" : "collection"} id={product.slug}>
-                <Frame ken={index === 0} className="collection-media" src={product.image} alt={product.imageAlt} />
-                <div className="collection-copy">
-                  <h2>{product.title}</h2>
-                  <p className="lede">{product.lead}</p>
-                  <p>{product.body}</p>
-                  <ul className="point-list">
-                    {product.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-              {index === 0 ? <hr className="rule" /> : null}
-            </Reveal>
+          {products.map((product) => (
+            <article className="product-detail" id={product.slug} key={product.slug}>
+              <Frame className="listing-media" src={product.image} alt={product.imageAlt} />
+              <div>
+                <h2>{product.title}</h2>
+                <p className="lede">{product.lead}</p>
+                <p>{product.body}</p>
+                <ul className="point-list">
+                  {product.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
           ))}
-          <p style={{ marginTop: "2.4rem" }}>
+          <p style={{ marginTop: "1.4rem" }}>
             <Link className="btn" href="/contact/">
-              Request these parts <IconArrow />
+              Request these parts
             </Link>
           </p>
         </div>

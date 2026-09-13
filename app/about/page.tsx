@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Ornament } from "@/components/Ornament";
 import { PageHero } from "@/components/PageHero";
-import { Reveal } from "@/components/Reveal";
 import { mission, reviews, vision } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -24,53 +22,45 @@ export default function AboutPage() {
         }}
       />
       <section className="section">
-        <div className="shell split-prose">
-          <Reveal variant="enter">
-            <Ornament />
+        <div className="shell product-detail">
+          <div>
             <h2>Pro Next Industries Private Limited</h2>
             <p>
               Pronext is the market name for a works that specialises in the production and marketing of scaffolding and
-              formwork. Component manufacturing experience since {site.founded}. The invitation on the incumbent site
-              still stands: visit the office and production facility in Kharabwadi, Tal-Khed, Chakan.
+              formwork. Component manufacturing experience since {site.founded}. Visit the office and production
+              facility in Kharabwadi, Tal-Khed, Chakan.
             </p>
             <p>{site.addressSingle}</p>
-          </Reveal>
-          <Reveal variant="fade" delay={80}>
-            <Ornament />
+          </div>
+          <div>
             <h2>{site.founder.name}</h2>
             <p>
-              {site.founder.role}. {site.founder.education}. The about page also notes automotive-industry experience and
-              more than fifteen years around machining solutions — including scaffolding and formwork-related
-              components.
+              {site.founder.role}. {site.founder.education}. Automotive-industry experience and more than fifteen years
+              around machining solutions — including scaffolding and formwork-related components.
             </p>
-            <h2 style={{ marginTop: "2.4rem" }}>Intent</h2>
             <p>{vision}</p>
             <p>{mission}</p>
-          </Reveal>
+          </div>
         </div>
       </section>
-      <section className="section band" id="reviews">
+      <section className="section" id="reviews">
         <div className="shell">
-          <Reveal variant="fade">
-            <Ornament />
+          <div className="band-intro">
             <h2>Buyer notes</h2>
             <p className="lede">
-              Sixteen professional B2B-style statements. Personas only — procurement, contractors, engineers — in India
-              and the export regions ProNext already names. They are not endorsements from real named companies.
+              Sixteen professional B2B-style statements. Personas only — not endorsements from real named companies.
             </p>
-          </Reveal>
+          </div>
           <div className="quote-journal">
-            {reviews.map((review, index) => (
-              <Reveal key={review.id} variant={index % 3 === 0 ? "rise" : "fade"} delay={(index % 4) * 50}>
-                <figure>
-                  <blockquote>
-                    <p>“{review.quote}”</p>
-                  </blockquote>
-                  <figcaption>
-                    {review.persona} · {review.context} · {review.topic}
-                  </figcaption>
-                </figure>
-              </Reveal>
+            {reviews.map((review) => (
+              <figure key={review.id}>
+                <blockquote>
+                  <p>“{review.quote}”</p>
+                </blockquote>
+                <figcaption>
+                  {review.persona} · {review.context} · {review.topic}
+                </figcaption>
+              </figure>
             ))}
           </div>
           <p>

@@ -142,6 +142,45 @@ export const products = [
   },
 ] as const;
 
+export const listings = [
+  {
+    slug: "scaffolding",
+    title: "Scaffolding components",
+    caption:
+      "Standards, ledgers, transoms, boards, and brackets — held to the drawing so a bay goes up square.",
+    image: "/images/scaffolding.jpg",
+    imageAlt: "Scaffolding bay in silhouette against a dusk sky — atmospheric, not a photograph of the Chakan works.",
+    href: "/products/#scaffolding",
+  },
+  {
+    slug: "formwork",
+    title: "Formwork components",
+    caption:
+      "Steel and plywood faces, walers, and fitment — sealed edges that survive the pour.",
+    image: "/images/formwork.jpg",
+    imageAlt: "Concrete corner and a form board in quiet daylight — atmospheric, not a photograph of the Chakan works.",
+    href: "/products/#formwork",
+  },
+  {
+    slug: "coating",
+    title: "CED + powder",
+    caption:
+      "Cathodic electrocoat then powder when specified. Export lots packed for the voyage.",
+    image: "/images/architecture.jpg",
+    imageAlt: "A quiet modernist elevation — atmospheric, not a finished project claimed by ProNext.",
+    href: "/quality/",
+  },
+  {
+    slug: "plant",
+    title: "The plant sequence",
+    caption:
+      "Laser, brake, fixtures, weld, plywood work, CMM — in the order a lot actually moves.",
+    image: "/images/plant.jpg",
+    imageAlt: "A single scaffold tower in a quiet industrial hall — atmospheric, not a photograph of the Chakan works.",
+    href: "/manufacturing/",
+  },
+] as const;
+
 export const reviews = [
   {
     id: "r01",

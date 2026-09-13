@@ -70,8 +70,8 @@ Undecided / not to be invented:
 - Specialization: production and marketing of scaffolding and formwork.
 - Quality claim already on the incumbent site: zero PPM commitment.
 - Export markets named on the incumbent site only: Germany, Mauritius, Latin America, Philippines, Dubai, Pakistan.
-- Visual world is a replacement (redesign). The incumbent SME template and the earlier shop-drawing title-block world are anti-references. The replacement world is editorial luxury adapted from a Webild luxury-real-estate cue — calm, photographic, typographic — applied to industrial B2B facts, without copying other houses’ marks or inventing certifications.
-- Binding craft constraints from the brief: no kicker/eyebrow above headings; no same-size icon+heading+text card grids as page structure; no nested cards; no Inter/Arial/system-default brand voice; no purple-to-blue SaaS gradients, glass-as-decoration, gradient text, or bounce/elastic easing; tinted neutrals; body contrast ≥4.5:1; ~65–75ch measure; soft fade/translate with exponential ease-out and reduced-motion; themed selection/focus/scrollbars; SVG icons, not emoji.
+- Visual world is a replacement (redesign). The incumbent SME template, the shop-drawing title-block world, and later industrial-energy chip/step chrome are anti-references. The replacement world matches the observed Webild luxury-real-estate UI grammar (full-bleed hero, pills, listing cards, glass RFQ) applied to industrial B2B facts, without copying other houses’ marks or inventing certifications.
+- Binding craft constraints from the brief: no kicker/eyebrow system; no same-size icon+heading+text card grids as page structure; no nested cards; no Inter/Arial/system-default brand voice; no purple-to-blue SaaS gradients, gradient text, or bounce/elastic easing; tinted neutrals; body contrast ≥4.5:1; ~65–75ch measure; optional hero crossfade only; themed selection/focus/scrollbars; SVG icons, not emoji.
 
 ## Evidence on Hand
 

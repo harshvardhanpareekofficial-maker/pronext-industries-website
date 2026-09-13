@@ -9,7 +9,7 @@ import { nav, site } from "@/lib/site";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const overlay = pathname === "/" || pathname === "/contact/";
 
   useEffect(() => {
     setOpen(false);
@@ -22,48 +22,39 @@ export function Header() {
     };
   }, [open]);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header className={scrolled ? "header is-scrolled" : "header"}>
-      <div className="shell header-main">
+    <header className={overlay ? "header header-overlay" : "header"}>
+      <div className="header-bar">
         <Link className="brand" href="/">
-          <span className="brand-type">
-            Pronext
-            <span>Industries</span>
-          </span>
+          Pronext
+          <span>Industries</span>
         </Link>
-        <button className="menu-btn" type="button" aria-expanded={open} aria-controls="site-nav" onClick={() => setOpen(true)}>
-          <IconMenu />
-          <span className="visually-hidden">Open menu</span>
-        </button>
+        <div className="header-end">
+          <Link className="nav-quote" href="/contact/">
+            Quote
+          </Link>
+          <button className="menu-btn" type="button" aria-expanded={open} aria-controls="site-nav" onClick={() => setOpen(true)}>
+            <IconMenu />
+            <span className="visually-hidden">Open menu</span>
+          </button>
+        </div>
         <nav id="site-nav" className={open ? "nav open" : "nav"} aria-label="Primary">
           <button className="nav-close" type="button" onClick={() => setOpen(false)}>
             <IconClose />
             <span className="visually-hidden">Close menu</span>
           </button>
           {nav
-            .filter((item) => item.href !== "/" && item.href !== "/contact/")
+            .filter((item) => item.href !== "/")
             .map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                aria-current={pathname === item.href || pathname?.startsWith(item.href) ? "page" : undefined}
+                aria-current={pathname === item.href || (item.href !== "/contact/" && pathname?.startsWith(item.href)) ? "page" : undefined}
               >
                 {item.label}
               </Link>
             ))}
-          <a className="nav-phone" href={site.phones[0].href}>
-            {site.phones[0].display}
-          </a>
-          <Link className="nav-quote" href="/contact/">
-            Quote
-          </Link>
+          <a href={site.phones[0].href}>{site.phones[0].display}</a>
         </nav>
       </div>
     </header>
