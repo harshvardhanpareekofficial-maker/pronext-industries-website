@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Frame } from "@/components/Frame";
+import { RfqForm } from "@/components/RfqForm";
 import { listings } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -9,20 +9,15 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="hero-media">
-          <Image
+          <img
             className="hero-slide"
             src="/images/hero.jpg"
             alt="A building elevation wrapped in scaffolding — atmospheric, not a photograph of the Chakan works."
-            fill
-            priority
-            sizes="100vw"
           />
-          <Image
+          <img
             className="hero-slide hero-slide-b"
             src="/images/architecture.jpg"
-            alt="A quiet modernist elevation — atmospheric, not a finished project claimed by ProNext."
-            fill
-            sizes="100vw"
+            alt=""
           />
         </div>
         <div className="hero-copy">
@@ -30,10 +25,10 @@ export default function HomePage() {
           <h1>
             Scaffolding and
             <br />
-            formwork, from Chakan.
+            formwork.
           </h1>
           <p className="lede">
-            ProNext Industries manufactures components from one works in Kharabwadi, Tal-Khed. Drawing to coat to crate.
+            Exclusive plant-made components from one works in Kharabwadi, Tal-Khed. Drawing to coat to crate.
           </p>
           <div className="hero-actions">
             <Link className="btn" href="/products/">
@@ -48,7 +43,7 @@ export default function HomePage() {
 
       <section className="band">
         <div className="band-intro">
-          <h2>One works. The drawing, the finish, the date.</h2>
+          <h2>For crews who treat the elevation as a craft.</h2>
           <p className="lede">
             {site.qualityClaim}. Lots packed for {site.exports.join(", ")}. No invented offices. No invented
             certificates.
@@ -65,9 +60,9 @@ export default function HomePage() {
         <div className="shell">
           <div className="band-intro">
             <p className="pill">Products</p>
-            <h2>Two families</h2>
+            <h2>Our collections</h2>
             <p className="lede">
-              What leaves the bay — and the plant path behind it. We make the parts on your drawing.
+              Scaffolding, formwork, and the plant path behind them — each line from one Chakan works.
             </p>
           </div>
           <div className="listings">
@@ -78,6 +73,26 @@ export default function HomePage() {
                 <p>{item.caption}</p>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-stage">
+        <div className="contact-stage-media">
+          <img
+            src="/images/plant.jpg"
+            alt="A quiet industrial hall — atmospheric, not a photograph of the Chakan works."
+          />
+        </div>
+        <div className="contact-panel">
+          <h2>Get in touch</h2>
+          <p className="lede" style={{ color: "color-mix(in srgb, #f6f3ee 80%, transparent)" }}>
+            Five fields. Office {site.hoursShort}.
+          </p>
+          <RfqForm glass />
+          <div className="contact-pills">
+            <span>Prefer to talk? Book a plant call.</span>
+            <a href={`mailto:${site.email}`}>Email us</a>
           </div>
         </div>
       </section>

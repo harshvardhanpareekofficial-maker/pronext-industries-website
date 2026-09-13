@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { RfqForm } from "@/components/RfqForm";
 import { site } from "@/lib/site";
 
@@ -16,16 +15,13 @@ export default function ContactPage() {
     <>
       <section className="contact-stage">
         <div className="contact-stage-media">
-          <Image
+          <img
             src="/images/plant.jpg"
             alt="A quiet industrial hall — atmospheric, not a photograph of the Chakan works."
-            fill
-            priority
-            sizes="100vw"
           />
         </div>
         <div className="contact-panel">
-          <h1>Send the drawing</h1>
+          <h1>Get in touch</h1>
           <p className="lede" style={{ color: "color-mix(in srgb, #f6f3ee 80%, transparent)" }}>
             Five fields. Office {site.hoursShort}.
           </p>
