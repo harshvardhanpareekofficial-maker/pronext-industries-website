@@ -8,7 +8,7 @@ export default function HomePage() {
     <>
       <section className="hero">
         <svg className="bayline" viewBox="0 0 1200 640" aria-hidden="true">
-          <path d="M40 40 H1160 V600 H40 Z M40 40 L200 160 V480 L40 600 M1160 40 L1000 160 V480 L1160 600 M200 160 H1000" />
+          <path d="M80 72 V568 M280 72 V568 M480 72 V568 M680 72 V568 M880 72 V568 M1080 72 V568 M80 168 H1080 M80 264 H1080 M80 360 H1080 M80 456 H1080 M80 552 H1080 M80 168 L280 72 M880 72 L1080 168 M80 552 L280 456" />
         </svg>
         <div className="shell hero-grid">
           <div>

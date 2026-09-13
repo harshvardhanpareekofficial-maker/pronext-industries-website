@@ -39,7 +39,7 @@ export function IconMark({ className }: IconProps) {
   return (
     <svg className={className} width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
       <rect x="1" y="1" width="34" height="34" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M8 26 V10 h6 l4 9 4-9 h6 v16 h-4 V16 l-4 9 h-4 l-4-9 v10 H8Z" fill="currentColor" />
+      <path d="M8 8h6v8h8V8h6v20h-6v-8h-8v8H8V8z" fill="currentColor" />
     </svg>
   );
 }
