@@ -55,6 +55,32 @@ export const processes = [
   },
 ] as const;
 
+export const proofs = [
+  { label: "Works", value: "Kharabwadi, Tal-Khed, Chakan" },
+  { label: "Since", value: String(site.founded) },
+  { label: "Commitment", value: site.qualityClaim },
+  { label: "Destinations", value: site.exports.join(" · ") },
+] as const;
+
+export const movements = [
+  {
+    name: "Draw",
+    detail: "Design and development from a sketch, sample, or packing list — not a catalog-only desk.",
+  },
+  {
+    name: "Form",
+    detail: "Laser, CNC press brake, profile cutting, fixtures, then MIG / MAG — held to the issued drawing.",
+  },
+  {
+    name: "Coat",
+    detail: "Cathodic electrocoat then powder when the specification calls for a coated lot.",
+  },
+  {
+    name: "Crate",
+    detail: "Export packing to the criteria named on the order, for the destinations already shipped.",
+  },
+] as const;
+
 export const products = [
   {
     slug: "scaffolding",

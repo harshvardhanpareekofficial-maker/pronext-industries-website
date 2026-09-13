@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="footer">
       <div className="shell footer-grid">
         <div>
-          <h2 style={{ fontSize: "2.6rem" }}>ProNext Industries</h2>
+          <h2 style={{ fontSize: "2.6rem", fontStyle: "italic" }}>ProNext Industries</h2>
           <p>
             Scaffolding and formwork production from Chakan, Pune. Manufacturing since {site.founded}. {site.qualityClaim}.
           </p>

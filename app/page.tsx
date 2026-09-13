@@ -1,9 +1,11 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Frame } from "@/components/Frame";
 import { IconArrow } from "@/components/Icons";
+import { Ornament } from "@/components/Ornament";
 import { Reveal } from "@/components/Reveal";
-import { processes, products, reviews } from "@/lib/content";
+import { movements, processes, products, proofs, reviews } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export default function HomePage() {
@@ -13,16 +15,17 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <h1>
+          <Ornament />
+          <h1 className="hero-in" style={{ "--d": "0.1s" } as CSSProperties}>
             Scaffolding and formwork,
             <br />
             made in Chakan.
           </h1>
-          <p className="lede">
+          <p className="lede hero-in" style={{ "--d": "0.24s" } as CSSProperties}>
             ProNext Industries produces and markets scaffolding and formwork components from Kharabwadi, Tal-Khed.
             Manufacturing since {site.founded}. One works: drawing to coat to crate.
           </p>
-          <div className="hero-actions">
+          <div className="hero-actions hero-in" style={{ "--d": "0.38s" } as CSSProperties}>
             <Link className="btn" href="/contact/">
               Request a quote <IconArrow />
             </Link>
@@ -30,9 +33,16 @@ export default function HomePage() {
               Call {site.phones[0].display}
             </a>
           </div>
+          <p className="scroll-cue hero-in" style={{ "--d": "0.54s" } as CSSProperties}>
+            The sequence
+          </p>
         </div>
         <div className="hero-media">
+          <span className="hero-glyph" aria-hidden="true">
+            {site.founded}
+          </span>
           <Image
+            className="ken"
             src="/images/hero.jpg"
             alt="A building elevation wrapped in scaffolding — atmospheric, not a photograph of the Chakan works."
             fill
@@ -42,9 +52,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="proof" aria-label="Plant facts">
+        <div className="shell proof-grid">
+          {proofs.map((item, index) => (
+            <Reveal key={item.label} variant="fade" delay={index * 70} className="proof-item">
+              <p className="label">{item.label}</p>
+              <strong>{item.value}</strong>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       <section className="intro">
         <div className="shell">
-          <Reveal className="intro-grid">
+          <Reveal variant="enter" className="intro-grid">
             <p className="intro-aside">Since {site.founded}, from one works in Chakan.</p>
             <div>
               <p className="lede">
@@ -69,16 +90,17 @@ export default function HomePage() {
 
       <section className="section">
         <div className="shell">
-          <Reveal className="section-head">
+          <Reveal variant="fade" className="section-head">
+            <Ornament />
             <h2>Two families</h2>
             <p className="lede">
               What leaves the bay. We do not sell another house’s named system. We make the parts on your drawing.
             </p>
           </Reveal>
           {products.map((product, index) => (
-            <Reveal key={product.slug}>
-              <article className="collection">
-                <Frame className="collection-media" src={product.image} alt={product.imageAlt} />
+            <Reveal key={product.slug} variant={index === 0 ? "rise" : "enter"}>
+              <article className={index === 1 ? "collection collection-alt" : "collection"}>
+                <Frame ken={index === 0} className="collection-media" src={product.image} alt={product.imageAlt} />
                 <div className="collection-copy">
                   <h3>{product.title}</h3>
                   <p>{product.lead}</p>
@@ -98,42 +120,58 @@ export default function HomePage() {
         </div>
       </section>
 
-      <hr className="rule" />
-
-      <section className="section">
+      <section className="section band">
         <div className="shell">
-          <Reveal className="section-head">
+          <Reveal variant="fade" className="section-head">
+            <Ornament />
             <h2>How a lot moves</h2>
             <p className="lede">
-              Capabilities in the order work actually travels. The numbers are the sequence, not decoration.
+              Four movements, then the full plant sequence. The numbers are the order work actually travels.
             </p>
           </Reveal>
-          <Reveal>
-            <div className="index">
-              {processes.map((step, i) => (
-                <Link className="index-row" key={step.code} href="/manufacturing/">
+          <div className="steps">
+            {movements.map((step, i) => (
+              <Reveal key={step.name} variant="line" delay={i * 90} className="step">
+                <p className="label">{String(i + 1).padStart(2, "0")}</p>
+                <h3>{step.name}</h3>
+                <p>{step.detail}</p>
+              </Reveal>
+            ))}
+          </div>
+          <div className="index">
+            {processes.map((step, i) => (
+              <Reveal key={step.code} variant="line" delay={Math.min(i * 40, 200)}>
+                <Link className="index-row" href="/manufacturing/">
                   <span className="num">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 style={{ fontSize: "1.55rem", margin: 0 }}>{step.name}</h3>
+                  <h3 style={{ fontSize: "1.45rem", margin: 0 }}>{step.name}</h3>
                   <p>{step.detail}</p>
                 </Link>
-              ))}
-            </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal variant="fade">
+            <p style={{ marginTop: "1.8rem" }}>
+              <Link className="text-link" href="/manufacturing/">
+                The plant, in order <IconArrow />
+              </Link>
+            </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="section band">
+      <section className="section">
         <div className="shell">
-          <Reveal className="section-head">
+          <Reveal variant="fade" className="section-head">
+            <Ornament />
             <h2>What buyers repeat</h2>
             <p className="lede">
               Persona statements written for this site — India and the named export regions. Not verified reviews from
               named companies. Topics that decide a reorder: coating, fit, packing, lead time, a phone that answers.
             </p>
           </Reveal>
-          <Reveal>
-            <div className="quote-journal">
-              <figure className="quote-feature">
+          <div className="quote-journal">
+            <Reveal variant="rise" className="quote-feature">
+              <figure>
                 <blockquote>
                   <p>“{featured.quote}”</p>
                 </blockquote>
@@ -141,8 +179,10 @@ export default function HomePage() {
                   {featured.persona} · {featured.context} · {featured.topic}
                 </figcaption>
               </figure>
-              {reviews.slice(1, 5).map((review) => (
-                <figure key={review.id}>
+            </Reveal>
+            {reviews.slice(1, 5).map((review, index) => (
+              <Reveal key={review.id} variant="fade" delay={40 + index * 60}>
+                <figure>
                   <blockquote>
                     <p>“{review.quote}”</p>
                   </blockquote>
@@ -150,8 +190,10 @@ export default function HomePage() {
                     {review.persona} · {review.context} · {review.topic}
                   </figcaption>
                 </figure>
-              ))}
-            </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal variant="fade">
             <Link className="text-link" href="/about/#reviews">
               All buyer notes <IconArrow />
             </Link>
@@ -159,31 +201,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="shell contact-grid">
-          <Reveal>
+      <section className="invite">
+        <div className="shell invite-grid">
+          <span className="invite-glyph" aria-hidden="true">
+            {site.founded}
+          </span>
+          <Reveal variant="enter">
+            <Ornament />
             <h2>Send the drawing.</h2>
             <p className="lede">
               Name, company, email, phone, need. Or call {site.phones[0].display} / {site.phones[1].display} during{" "}
               {site.hoursShort}.
             </p>
-            <p>
-              <Link className="text-link" href="/contact/">
+            <div className="hero-actions">
+              <Link className="btn" href="/contact/">
                 Open the quote form <IconArrow />
               </Link>
-            </p>
-            <p style={{ marginTop: "1.4rem" }}>
-              <Link href="/faq/">FAQ</Link>
-              {" · "}
-              <Link href="/quality/">Quality &amp; delivery</Link>
-            </p>
+              <a className="btn btn-ghost" href={site.phones[0].href}>
+                Call the works
+              </a>
+            </div>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal variant="fade" delay={90}>
             <p className="quiet">
               {site.addressSingle}
               <br />
               <br />
               {site.email}
+            </p>
+            <p className="invite-links">
+              <Link href="/faq/">FAQ</Link>
+              {" · "}
+              <Link href="/quality/">Quality &amp; delivery</Link>
             </p>
           </Reveal>
         </div>

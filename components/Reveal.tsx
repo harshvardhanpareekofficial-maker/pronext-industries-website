@@ -2,13 +2,16 @@
 
 import { ReactNode, useEffect, useRef, useState } from "react";
 
+export type RevealVariant = "rise" | "fade" | "enter" | "line";
+
 type Props = {
   children: ReactNode;
   className?: string;
   delay?: number;
+  variant?: RevealVariant;
 };
 
-export function Reveal({ children, className, delay = 0 }: Props) {
+export function Reveal({ children, className, delay = 0, variant = "rise" }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -28,7 +31,7 @@ export function Reveal({ children, className, delay = 0 }: Props) {
           observer.disconnect();
         }
       },
-      { threshold: 0.12 },
+      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" },
     );
 
     observer.observe(node);
@@ -38,7 +41,7 @@ export function Reveal({ children, className, delay = 0 }: Props) {
   return (
     <div
       ref={ref}
-      className={`reveal${visible ? " is-in" : ""}${className ? ` ${className}` : ""}`}
+      className={`reveal reveal-${variant}${visible ? " is-in" : ""}${className ? ` ${className}` : ""}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

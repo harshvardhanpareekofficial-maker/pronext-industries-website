@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Ornament } from "@/components/Ornament";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { mission, reviews, vision } from "@/lib/content";
@@ -24,7 +25,8 @@ export default function AboutPage() {
       />
       <section className="section">
         <div className="shell split-prose">
-          <Reveal>
+          <Reveal variant="enter">
+            <Ornament />
             <h2>Pro Next Industries Private Limited</h2>
             <p>
               Pronext is the market name for a works that specialises in the production and marketing of scaffolding and
@@ -33,7 +35,8 @@ export default function AboutPage() {
             </p>
             <p>{site.addressSingle}</p>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal variant="fade" delay={80}>
+            <Ornament />
             <h2>{site.founder.name}</h2>
             <p>
               {site.founder.role}. {site.founder.education}. The about page also notes automotive-industry experience and
@@ -48,17 +51,18 @@ export default function AboutPage() {
       </section>
       <section className="section band" id="reviews">
         <div className="shell">
-          <Reveal>
+          <Reveal variant="fade">
+            <Ornament />
             <h2>Buyer notes</h2>
             <p className="lede">
               Sixteen professional B2B-style statements. Personas only — procurement, contractors, engineers — in India
               and the export regions ProNext already names. They are not endorsements from real named companies.
             </p>
           </Reveal>
-          <Reveal>
-            <div className="quote-journal">
-              {reviews.map((review) => (
-                <figure key={review.id}>
+          <div className="quote-journal">
+            {reviews.map((review, index) => (
+              <Reveal key={review.id} variant={index % 3 === 0 ? "rise" : "fade"} delay={(index % 4) * 50}>
+                <figure>
                   <blockquote>
                     <p>“{review.quote}”</p>
                   </blockquote>
@@ -66,12 +70,12 @@ export default function AboutPage() {
                     {review.persona} · {review.context} · {review.topic}
                   </figcaption>
                 </figure>
-              ))}
-            </div>
-            <p>
-              <Link href="/contact/">If the note sounds like your job, send the drawing.</Link>
-            </p>
-          </Reveal>
+              </Reveal>
+            ))}
+          </div>
+          <p>
+            <Link href="/contact/">If the note sounds like your job, send the drawing.</Link>
+          </p>
         </div>
       </section>
     </>
