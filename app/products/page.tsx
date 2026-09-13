@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Frame } from "@/components/Frame";
 import { IconArrow } from "@/components/Icons";
-import { Ornament } from "@/components/Ornament";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { products } from "@/lib/content";
