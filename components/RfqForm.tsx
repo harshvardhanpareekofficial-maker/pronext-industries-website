@@ -68,7 +68,7 @@ export function RfqForm({ glass = false }: Props) {
   }
 
   return (
-    <form className="rfq" action={action} method={action ? "POST" : "dialog"} onSubmit={onSubmit} noValidate>
+    <form className={glass ? "rfq rfq-glass" : "rfq"} action={action} method={action ? "POST" : "dialog"} onSubmit={onSubmit} noValidate>
       <div>
         <label htmlFor="rfq-name">Name</label>
         <input
