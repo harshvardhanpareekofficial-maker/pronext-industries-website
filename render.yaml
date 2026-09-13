@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: pronext-industries
+    runtime: static
+    plan: free
+    buildCommand: npm ci && npm run build
+    staticPublishPath: out
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    routes:
+      - type: rewrite
+        source: /sitemap.xml
+        destination: /sitemap.xml
+    envVars:
+      - key: NEXT_PUBLIC_FORMSPREE_ID
+        sync: false
