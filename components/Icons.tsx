@@ -35,15 +35,6 @@ export function IconArrow({ className }: IconProps) {
   );
 }
 
-export function IconMark({ className }: IconProps) {
-  return (
-    <svg className={className} width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
-      <rect x="1" y="1" width="34" height="34" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M8 8h6v8h8V8h6v20h-6v-8h-8v8H8V8z" fill="currentColor" />
-    </svg>
-  );
-}
-
 export function IconClose({ className }: IconProps) {
   return (
     <svg className={className} width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">

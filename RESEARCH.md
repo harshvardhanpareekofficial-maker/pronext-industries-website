@@ -1,5 +1,13 @@
 # Genre research
 
+## Visual cue
+
+The UI world is adapted from Webild’s luxury real-estate template language ([luxury-real-estate](https://www.webild.io/templates/luxury-real-estate)): editorial luxury, cinematic typography-forward hero, photography-led passages, product families shown as curated collections, minimal chrome, quiet motion. That template is a **visual cue**, not a sector cue. Copy, IA, proof, and buyer path stay industrial B2B — scaffolding and formwork procurement from Chakan. No property-listing language, no invented lifestyle claims, no house-for-sale photography.
+
+Category research below is unchanged: manufacturer-site patterns for trust, RFQ, and export proof.
+
+## Category research
+
 Common success traits from scaffolding and formwork manufacturer sites (Layher, PERI, Doka, and the same class of exporters: Altrad, ULMA, BrandSafway-type industrial suppliers). Only recurring patterns were applied. No marks, product-system names, load tables, or certifications were copied.
 
 ## Recurring patterns observed
@@ -36,7 +44,7 @@ Common success traits from scaffolding and formwork manufacturer sites (Layher, 
 
 | Trait | Where it lives |
 | --- | --- |
-| 30-second verification | Home hero + process register + trust rail |
+| 30-second verification | Home hero + editorial intro + collections |
 | Real trust only | 2014, zero PPM, export list, process |
 | Two-click depth | `/products`, `/manufacturing`, `/quality` |
 | Export proof | Home rail, Quality, Contact |

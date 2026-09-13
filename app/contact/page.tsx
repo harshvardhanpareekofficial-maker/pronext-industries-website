@@ -15,7 +15,6 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        drawing="PN-RFQ-001"
         title="Quote or call"
         lede="Five fields. A plant email. Two mobiles. Office Monday to Friday, 9:00 am to 6:00 pm."
       />
@@ -36,7 +35,7 @@ export default function ContactPage() {
             </p>
             <p>{site.hours}</p>
             <p>{site.addressSingle}</p>
-            <div style={{ border: "1px solid var(--ink)", marginTop: "1.4rem" }}>
+            <div className="map-frame">
               <iframe
                 title="Map to Pro Next Industries, Chakan"
                 src={map}

@@ -6,11 +6,11 @@ export function Footer() {
     <footer className="footer">
       <div className="shell footer-grid">
         <div>
-          <h2 style={{ fontSize: "2.4rem", color: "var(--field)" }}>ProNext Industries</h2>
+          <h2 style={{ fontSize: "2.6rem" }}>ProNext Industries</h2>
           <p>
             Scaffolding and formwork production from Chakan, Pune. Manufacturing since {site.founded}. {site.qualityClaim}.
           </p>
-          <p className="data">
+          <p>
             {site.addressLines.map((line) => (
               <span key={line}>
                 {line}
@@ -20,7 +20,7 @@ export function Footer() {
           </p>
         </div>
         <div>
-          <h3 style={{ fontSize: "1.4rem" }}>Plant</h3>
+          <h3>Works</h3>
           <ul>
             <li>
               <a href={`mailto:${site.email}`}>{site.email}</a>
@@ -34,7 +34,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h3 style={{ fontSize: "1.4rem" }}>Drawings</h3>
+          <h3>Pages</h3>
           <ul>
             <li>
               <Link href="/products/">Products</Link>

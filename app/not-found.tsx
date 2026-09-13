@@ -4,9 +4,8 @@ export default function NotFound() {
   return (
     <section className="page-hero">
       <div className="shell">
-        <p className="page-meta data">PN-404</p>
-        <h1>Sheet not on file.</h1>
-        <p className="lede">That route is not a drawing we issue. Return to the works or send a quote.</p>
+        <h1>This page is not here.</h1>
+        <p className="lede">That route is not one we publish. Return home, or send a quote.</p>
         <p>
           <Link className="btn" href="/">
             Home

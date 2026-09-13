@@ -1,20 +1,22 @@
+import { Frame } from "./Frame";
+
 type Props = {
-  drawing: string;
   title: string;
   lede: string;
+  image?: { src: string; alt: string; wide?: boolean };
 };
 
-export function PageHero({ drawing, title, lede }: Props) {
+export function PageHero({ title, lede, image }: Props) {
   return (
     <section className="page-hero">
-      <div className="shell">
-        <p className="page-meta data">
-          <span>{drawing}</span>
-          <span>REV 00</span>
-          <span>CHAKAN WORKS</span>
-        </p>
-        <h1>{title}</h1>
-        <p className="lede">{lede}</p>
+      <div className={image ? "shell page-hero-grid" : "shell"}>
+        <div>
+          <h1>{title}</h1>
+          <p className="lede">{lede}</p>
+        </div>
+        {image ? (
+          <Frame className={image.wide ? "page-hero-media wide" : "page-hero-media"} src={image.src} alt={image.alt} />
+        ) : null}
       </div>
     </section>
   );

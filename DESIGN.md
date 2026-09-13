@@ -4,47 +4,50 @@
 
 ## World
 
-Shop-drawing title block. The site is a measured sheet issued by a Chakan works — thick and thin rules, a data register, condensed industrial lettering — not a SaaS landing page and not a timid SME template. Oxide primer is the committed color: it owns whole bands (header underbar, hero close, RFQ slab), not scattered chips. Ground is cast concrete and drawing-sheet gray-green, forced by fluorescent plant light on dusty slab, not a cream editorial desk.
+Editorial luxury, translated for a Chakan works. The site is a quiet monograph — generous bone ground, magazine grids, hairline rules, photography treated as atmosphere — not a shop-drawing title block and not a real-estate listing. Calm authority for procurement: the same restraint a luxury-residence template uses for silence and space, applied to scaffolding and formwork.
+
+Terracotta is the one committed accent. It appears on primary actions only. It does not own bands, bars, or chrome.
 
 ## Surfaces
 
-- `--sheet` `#e4e5de` — drawing paper
-- `--concrete` `#b7bbb3` — wet-cast slab, cool dust
-- `--ink` `#131610` — olive-black
-- `--steel` `#1c211d` — dark bay
-- `--primer` `#a32c12` — oxide red, committed field color
-- `--zinc` `#8e9588` — muted steel-green
-- `--mark` `#c4a12a` — crane yellow for selection, focus, and the one motion stroke
-- `--field` `#f1f2ec` — raised sheet inside the frame
+- `--bone` `#f3eee6` — page ground, warm alabaster
+- `--alabaster` `#faf6f0` — raised passage
+- `--linen` `#e7dfd3` — photograph matte, alternate band
+- `--charcoal` `#1b1714` — display ink
+- `--ink` `#2c2722` — body
+- `--muted` `#5c554c` — secondary type (≥4.5:1 on bone)
+- `--terracotta` `#8b3f2f` — CTAs only
+- `--night` `#12100e` — footer, cinematic overlay
 
-Neutrals are tinted toward olive-dust. No pure gray, no purple, no sky-blue gradient.
+Neutrals are tinted toward warm dust and paper. No pure cool gray, no purple, no sky-blue gradient, no oxide primer fields, no drawing-sheet green.
 
 ## Type
 
-- Display: **Big Shoulders Display** (800/900) — highway/industrial condensed. Tracking no tighter than -0.035em. Max 5.6rem.
-- Body / UI: **Barlow** (400/500/600) — workhorse with a construction-catalog stance. Measure 65–75ch.
-- Data: **Azeret Mono** (500) — phones, hours, drawing numbers, process codes only.
+- Display: **Cormorant Garamond** (400/500/600, italic 500) — elegant old-style serif. Weight 500 on headlines. Tracking no tighter than -0.02em. Max ~7rem.
+- Body / UI: **Libre Franklin** (400/500/600) — refined humanist sans. Measure 65–75ch.
 
-No Inter, Arial, Geist, Space Grotesk, or system UI as the brand voice.
+No Inter, Arial, Geist, Space Grotesk, Barlow, Big Shoulders, condensed industrial display, or system UI as the brand voice. No monospace title-block lettering.
 
 ## Form
 
-Orthogonal. Square corners on editorial slabs and title blocks. 2px radius only on form controls and the mobile call chip. Elevation is a 1px ink/steel rule, not a soft card shadow. No nested cards. No icon-heading-text grids as structure. No kickers or eyebrows; the heading carries the section.
+Hairlines, not frames. Square corners on editorial slabs; 2px radius only on form controls and the mobile call chip. Elevation is a 1px warm rule, not a card shadow. No nested cards. No icon-heading-text grids as structure. No kickers or eyebrows; the heading carries the section.
 
-Icons are 1.5px-stroke SVG in one family (arrows, phone, mail, plant marks). No emoji.
+Icons are 1.5px-stroke SVG in one family. No emoji. The wordmark is type only.
+
+Photographs are atmospheric stills (architecture, scaffold geometry, material) — never presented as the Chakan works, never as client proof.
 
 ## Motion
 
-One authored moment: the hero bayline (SVG) draws once on load, `stroke-dashoffset`, `cubic-bezier(0.16, 1, 0.3, 1)`, ~1.1s. Content is visible before the stroke finishes. `prefers-reduced-motion: reduce` cancels it. No bounce, elastic, or per-section fade-up.
+Soft fade and a short upward translate on first reveal, `cubic-bezier(0.16, 1, 0.3, 1)`, ~0.8s. Collection images ease to a slight scale on hover. `prefers-reduced-motion: reduce` cancels transform and delay. No bounce, elastic, stroke-dash drawing, or per-card stagger theatre.
 
 ## Chrome
 
-Selection: mark on ink. Focus: 2px mark outline, 3px offset. Scrollbars: steel track, primer thumb. Caret: primer. Underline offset 0.18em.
+Selection: linen on charcoal. Focus: 2px terracotta outline, 3px offset. Scrollbars: night track, muted thumb. Caret: terracotta. Underline offset 0.2em.
 
 ## Layout grammar
 
-Every route sits in a ruled sheet. The first viewport is a dark steel bay with a huge condensed offer and a process register — not a metric row. Subsequent passages alternate density: split product slabs, a sequential plant line (numbers earned because order is the information), a quote river, a closing RFQ title block. Phone and quote stay in the header; a sticky call bar appears on small screens.
+Minimal sticky nav on bone. The first viewport is a typography-forward cinematic split: large serif offer, short plant sentence, quote and call — photograph occupying the opposing column. Later passages alternate density: an asymmetric intro, two product collections like curated listings, a numbered plant index, a quote journal, a closing invitation. Phone and quote stay in the header; a sticky call bar appears on small screens.
 
 ## Anti-references
 
-Incumbent Pronext WordPress brochure. Purple-to-blue SaaS. Glass. Gradient type. Inter. Icon-card triads. Hero-metric templates. Invented ISO badges and client-logo walls.
+Incumbent Pronext WordPress brochure. The previous shop-drawing / title-block world (Big Shoulders, oxide primer bands, process register as a drawing). Purple-to-blue SaaS. Glass. Gradient type. Inter. Icon-card triads. Hero-metric templates. Invented ISO badges and client-logo walls. Suburban house listings and lifestyle interiors that would recast the plant as a realtor.
