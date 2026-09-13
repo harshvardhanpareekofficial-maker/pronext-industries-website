@@ -24,7 +24,11 @@ export default function ProductsPage() {
           {products.map((product, index) => (
             <Reveal key={product.slug}>
               <article className="collection" id={product.slug}>
-                <Frame className="collection-media" src={product.image} alt={product.imageAlt} />
+                <Frame
+                  className={`collection-media${product.slug === "scaffolding" ? " frame-base" : ""}`}
+                  src={product.image}
+                  alt={product.imageAlt}
+                />
                 <div className="collection-copy">
                   <h2>{product.title}</h2>
                   <p className="lede">{product.lead}</p>

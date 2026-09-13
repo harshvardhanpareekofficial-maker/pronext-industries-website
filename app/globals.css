@@ -135,7 +135,7 @@ h3,
 }
 
 h1 {
-  font-size: clamp(3.4rem, 8.4vw, 7rem);
+  font-size: clamp(2.9rem, 6.4vw, 5.4rem);
 }
 
 .page-hero h1 {
@@ -282,7 +282,7 @@ p {
 .nav {
   display: flex;
   align-items: center;
-  gap: 1.35rem;
+  gap: 1.2rem;
 }
 
 .nav a {
@@ -338,22 +338,22 @@ p {
 .hero-copy {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-top: clamp(2.4rem, 6vw, 5.5rem);
-  padding-bottom: clamp(2.6rem, 5vw, 4.4rem);
+  justify-content: center;
+  padding-top: clamp(2rem, 4vw, 3.2rem);
+  padding-bottom: clamp(2rem, 4vw, 3.2rem);
   padding-left: max(var(--gutter), calc((100vw - 1220px) / 2));
   padding-right: clamp(1.5rem, 4vw, 3.2rem);
 }
 
 .hero-copy h1 {
-  max-width: 11ch;
+  max-width: 12ch;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1.8rem;
+  margin-top: 1.45rem;
 }
 
 .hero-media {
@@ -458,7 +458,11 @@ p {
 }
 
 .collection-media {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
+}
+
+.frame-base img {
+  object-position: center 90%;
 }
 
 .collection-copy h2,
@@ -772,7 +776,16 @@ figcaption {
   }
 }
 
+@media (max-width: 1180px) {
+  .nav-phone {
+    display: none;
+  }
+}
+
 @media (max-width: 960px) {
+  .nav-phone {
+    display: block;
+  }
   .menu-btn {
     display: inline-flex;
     align-items: center;
@@ -835,18 +848,14 @@ figcaption {
     min-height: auto;
   }
 
-  .hero-media {
-    min-height: 52vw;
-    aspect-ratio: 4 / 5;
-  }
-
   .hero-copy {
-    padding: 2.6rem var(--gutter) 2.8rem;
-    order: 2;
+    padding: 2.2rem var(--gutter) 2.2rem;
   }
 
   .hero-media {
-    order: 1;
+    aspect-ratio: 5 / 4;
+    min-height: 0;
+    max-height: 42vh;
   }
 
   .page-hero-media {

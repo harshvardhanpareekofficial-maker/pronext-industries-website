@@ -14,7 +14,9 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-copy">
           <h1>
-            Scaffolding and formwork,
+            Scaffolding
+            <br />
+            and formwork,
             <br />
             made in Chakan.
           </h1>
@@ -78,7 +80,11 @@ export default function HomePage() {
           {products.map((product, index) => (
             <Reveal key={product.slug}>
               <article className="collection">
-                <Frame className="collection-media" src={product.image} alt={product.imageAlt} />
+                <Frame
+                  className={`collection-media${product.slug === "scaffolding" ? " frame-base" : ""}`}
+                  src={product.image}
+                  alt={product.imageAlt}
+                />
                 <div className="collection-copy">
                   <h3>{product.title}</h3>
                   <p>{product.lead}</p>
