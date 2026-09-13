@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { IconArrow } from "@/components/Icons";
+import { Ornament } from "@/components/Ornament";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/site";
@@ -25,7 +26,8 @@ export default function QualityPage() {
       />
       <section className="section">
         <div className="shell split-prose">
-          <Reveal>
+          <Reveal variant="enter">
+            <Ornament />
             <h2>What we will stand behind</h2>
             <p>
               {site.qualityClaim} — the wording on the incumbent ProNext site. Incoming inspection still belongs to the
@@ -46,7 +48,8 @@ export default function QualityPage() {
               </Link>
             </p>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal variant="fade" delay={80}>
+            <Ornament />
             <h2>Where lots already travel</h2>
             <p>
               Destinations named by ProNext. A footprint statement, not a claim of owned offices in each city.

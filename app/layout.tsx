@@ -9,10 +9,16 @@ import "./globals.css";
 
 const display = localFont({
   src: [
-    { path: "./fonts/cormorant-garamond-latin-400-normal.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/cormorant-garamond-latin-500-normal.woff2", weight: "500", style: "normal" },
-    { path: "./fonts/cormorant-garamond-latin-600-normal.woff2", weight: "600", style: "normal" },
-    { path: "./fonts/cormorant-garamond-latin-500-italic.woff2", weight: "500", style: "italic" },
+    {
+      path: "./fonts/archivo-latin-wdth-wght-normal.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "./fonts/archivo-latin-wdth-wght-italic.woff2",
+      weight: "100 900",
+      style: "italic",
+    },
   ],
   variable: "--font-display",
   display: "swap",
@@ -20,11 +26,24 @@ const display = localFont({
 
 const body = localFont({
   src: [
-    { path: "./fonts/libre-franklin-latin-400-normal.woff2", weight: "400" },
-    { path: "./fonts/libre-franklin-latin-500-normal.woff2", weight: "500" },
-    { path: "./fonts/libre-franklin-latin-600-normal.woff2", weight: "600" },
+    {
+      path: "./fonts/source-sans-3-latin-wght-normal.woff2",
+      weight: "200 900",
+      style: "normal",
+    },
+    {
+      path: "./fonts/source-sans-3-latin-wght-italic.woff2",
+      weight: "200 900",
+      style: "italic",
+    },
   ],
   variable: "--font-body",
+  display: "swap",
+});
+
+const data = localFont({
+  src: [{ path: "./fonts/ibm-plex-mono-latin-500-normal.woff2", weight: "500", style: "normal" }],
+  variable: "--font-data",
   display: "swap",
 });
 
@@ -48,13 +67,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${data.variable}`}>
       {/*
-        THESIS: A quiet monograph for a Chakan works — editorial luxury, not a shop-drawing and not a SaaS page.
-        OWN-WORLD: Warm bone, charcoal type, terracotta on CTAs only, Cormorant Garamond + Libre Franklin, hairline grids.
+        THESIS: Ivory monograph for a Chakan works — Webild calm + industrial-energy craft, not a shop-drawing and not a SaaS page.
+        OWN-WORLD: Ivory ground, charcoal type, terracotta on CTAs, Archivo display + Source Sans 3 + IBM Plex Mono labels.
         STORY: Buyer sees what is made, the process, 2014 / zero PPM / named exports, then requests a quote or calls.
-        FIRST VIEWPORT: Typography-forward cinematic split, large serif offer, quote + call.
-        FORM: Editorial luxury / curated collections. User-pinned Webild luxury-RE cue adapted to industrial B2B.
+        FIRST VIEWPORT: Punchy H1, one thesis, rounded plate, quote + call.
+        FORM: Webild luxury-RE whitespace + Kailash-style proof/process/FAQ/invite rhythm. User-pinned polish.
         FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
       */}
       <body>

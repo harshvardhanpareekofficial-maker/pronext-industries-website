@@ -22,9 +22,9 @@ export default function ProductsPage() {
       <section className="section">
         <div className="shell">
           {products.map((product, index) => (
-            <Reveal key={product.slug}>
-              <article className="collection" id={product.slug}>
-                <Frame className="collection-media" src={product.image} alt={product.imageAlt} />
+            <Reveal key={product.slug} variant={index === 0 ? "rise" : "enter"}>
+              <article className={index === 1 ? "collection collection-alt" : "collection"} id={product.slug}>
+                <Frame ken={index === 0} className="collection-media" src={product.image} alt={product.imageAlt} />
                 <div className="collection-copy">
                   <h2>{product.title}</h2>
                   <p className="lede">{product.lead}</p>

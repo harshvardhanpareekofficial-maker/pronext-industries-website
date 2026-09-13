@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { Ornament } from "@/components/Ornament";
 import { PageHero } from "@/components/PageHero";
+import { Reveal } from "@/components/Reveal";
 import { RfqForm } from "@/components/RfqForm";
 import { site } from "@/lib/site";
 
@@ -20,7 +22,8 @@ export default function ContactPage() {
       />
       <section className="section">
         <div className="shell contact-grid">
-          <div>
+          <Reveal variant="enter">
+            <Ornament />
             <h2>Works contact</h2>
             <p>
               <a href={`mailto:${site.email}`}>{site.email}</a>
@@ -46,8 +49,10 @@ export default function ContactPage() {
                 style={{ border: 0, display: "block" }}
               />
             </div>
-          </div>
-          <RfqForm />
+          </Reveal>
+          <Reveal variant="fade" delay={70}>
+            <RfqForm />
+          </Reveal>
         </div>
       </section>
     </>

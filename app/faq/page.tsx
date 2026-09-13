@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Ornament } from "@/components/Ornament";
 import { PageHero } from "@/components/PageHero";
+import { Reveal } from "@/components/Reveal";
 import { faqs } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -13,11 +15,14 @@ export default function FaqPage() {
   return (
     <>
       <PageHero
-        title="Questions buyers actually ask"
+        title="In plain terms"
         lede="Short answers from published plant facts. If a number is not on the incumbent site, it is not invented here."
       />
       <section className="section">
         <div className="shell faq">
+          <Reveal variant="fade">
+            <Ornament />
+          </Reveal>
           {faqs.map((item) => (
             <details key={item.q}>
               <summary>{item.q}</summary>
