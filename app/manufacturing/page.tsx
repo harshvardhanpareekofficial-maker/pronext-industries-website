@@ -27,12 +27,12 @@ export default function ManufacturingPage() {
         <div className="shell">
           <Reveal variant="fade" className="section-head">
             <Ornament />
-            <h2>Four movements</h2>
-            <p className="lede">A shorter reading of the same plant: draw, form, coat, crate.</p>
+            <h2>How a lot moves, in four steps</h2>
+            <p className="lede">A shorter reading of the same plant: draw, form, coat, crate. Then the bay, in order.</p>
           </Reveal>
           <div className="steps">
             {movements.map((step, i) => (
-              <Reveal key={step.name} variant="line" delay={i * 90} className="step">
+              <Reveal key={step.name} variant="step" delay={i * 110} className="step">
                 <p className="label">{String(i + 1).padStart(2, "0")}</p>
                 <h3>{step.name}</h3>
                 <p>{step.detail}</p>

@@ -5,7 +5,7 @@ import { Frame } from "@/components/Frame";
 import { IconArrow } from "@/components/Icons";
 import { Ornament } from "@/components/Ornament";
 import { Reveal } from "@/components/Reveal";
-import { movements, processes, products, proofs, reviews } from "@/lib/content";
+import { faqs, movements, products, proofs, reviews, stages } from "@/lib/content";
 import { site } from "@/lib/site";
 
 export default function HomePage() {
@@ -17,13 +17,11 @@ export default function HomePage() {
         <div className="hero-copy">
           <Ornament />
           <h1 className="hero-in" style={{ "--d": "0.1s" } as CSSProperties}>
-            Scaffolding and formwork,
-            <br />
-            made in Chakan.
+            Parts from Chakan.
           </h1>
           <p className="lede hero-in" style={{ "--d": "0.24s" } as CSSProperties}>
-            ProNext Industries produces and markets scaffolding and formwork components from Kharabwadi, Tal-Khed.
-            Manufacturing since {site.founded}. One works: drawing to coat to crate.
+            ProNext Industries manufactures scaffolding and formwork components from one works in Kharabwadi, Tal-Khed.
+            Since {site.founded}: drawing to coat to crate.
           </p>
           <div className="hero-actions hero-in" style={{ "--d": "0.38s" } as CSSProperties}>
             <Link className="btn" href="/contact/">
@@ -34,7 +32,7 @@ export default function HomePage() {
             </a>
           </div>
           <p className="scroll-cue hero-in" style={{ "--d": "0.54s" } as CSSProperties}>
-            The sequence
+            How a lot moves
           </p>
         </div>
         <div className="hero-media">
@@ -55,7 +53,7 @@ export default function HomePage() {
       <section className="proof" aria-label="Plant facts">
         <div className="shell proof-grid">
           {proofs.map((item, index) => (
-            <Reveal key={item.label} variant="fade" delay={index * 70} className="proof-item">
+            <Reveal key={item.label} variant="fade" delay={index * 80} className="proof-item">
               <p className="label">{item.label}</p>
               <strong>{item.value}</strong>
             </Reveal>
@@ -124,28 +122,28 @@ export default function HomePage() {
         <div className="shell">
           <Reveal variant="fade" className="section-head">
             <Ornament />
-            <h2>How a lot moves</h2>
+            <h2>How a lot moves, in four steps</h2>
             <p className="lede">
-              Four movements, then the full plant sequence. The numbers are the order work actually travels.
+              A shorter reading of the plant. The full sequence — laser through CMM — sits on the plant page.
             </p>
           </Reveal>
           <div className="steps">
             {movements.map((step, i) => (
-              <Reveal key={step.name} variant="line" delay={i * 90} className="step">
+              <Reveal key={step.name} variant="step" delay={i * 110} className="step">
                 <p className="label">{String(i + 1).padStart(2, "0")}</p>
                 <h3>{step.name}</h3>
                 <p>{step.detail}</p>
               </Reveal>
             ))}
           </div>
-          <div className="index">
-            {processes.map((step, i) => (
-              <Reveal key={step.code} variant="line" delay={Math.min(i * 40, 200)}>
-                <Link className="index-row" href="/manufacturing/">
-                  <span className="num">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 style={{ fontSize: "1.45rem", margin: 0 }}>{step.name}</h3>
-                  <p>{step.detail}</p>
-                </Link>
+          <div className="roadmap">
+            {stages.map((row, i) => (
+              <Reveal key={row.stage} variant="enter" delay={i * 70} className="roadmap-row">
+                <p className="label">{row.stage}</p>
+                <div>
+                  <h3>{row.title}</h3>
+                  <p>{row.detail}</p>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -201,6 +199,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section faq-band">
+        <div className="shell">
+          <Reveal variant="fade" className="section-head">
+            <Ornament />
+            <h2>In plain terms</h2>
+            <p className="lede">The questions buyers actually ask, answered from published plant facts.</p>
+          </Reveal>
+          <div className="faq">
+            {faqs.slice(0, 6).map((item) => (
+              <details key={item.q}>
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
+          <p style={{ marginTop: "1.8rem" }}>
+            <Link className="text-link" href="/faq/">
+              All questions <IconArrow />
+            </Link>
+          </p>
+        </div>
+      </section>
+
       <section className="invite">
         <div className="shell invite-grid">
           <span className="invite-glyph" aria-hidden="true">
@@ -210,9 +231,19 @@ export default function HomePage() {
             <Ornament />
             <h2>Send the drawing.</h2>
             <p className="lede">
-              Name, company, email, phone, need. Or call {site.phones[0].display} / {site.phones[1].display} during{" "}
-              {site.hoursShort}.
+              Name, company, email, phone, need. One message reaches the works during {site.hoursShort}.
             </p>
+            <div className="invite-contacts">
+              <a className="invite-contact" href={site.phones[0].href}>
+                {site.phones[0].display}
+              </a>
+              <a className="invite-contact" href={site.phones[1].href}>
+                {site.phones[1].display}
+              </a>
+              <a className="invite-contact" href={`mailto:${site.email}`}>
+                {site.email}
+              </a>
+            </div>
             <div className="hero-actions">
               <Link className="btn" href="/contact/">
                 Open the quote form <IconArrow />
@@ -223,12 +254,7 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal variant="fade" delay={90}>
-            <p className="quiet">
-              {site.addressSingle}
-              <br />
-              <br />
-              {site.email}
-            </p>
+            <p className="quiet">{site.addressSingle}</p>
             <p className="invite-links">
               <Link href="/faq/">FAQ</Link>
               {" · "}

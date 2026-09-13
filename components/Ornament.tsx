@@ -3,5 +3,11 @@ type Props = {
 };
 
 export function Ornament({ className }: Props) {
-  return <span className={className ? `ornament ${className}` : "ornament"} aria-hidden="true" />;
+  return (
+    <span className={className ? `ornament ${className}` : "ornament"} aria-hidden="true">
+      <i />
+      <i />
+      <i />
+    </span>
+  );
 }

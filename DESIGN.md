@@ -4,7 +4,7 @@
 
 ## World
 
-Editorial luxury, translated for a Chakan works. The site is a quiet monograph — ivory ground, magazine measure, hairline rules, photography treated as rounded plates — not a shop-drawing title block and not a real-estate listing. Calm authority for procurement: Webild-luxury silence and space, with industrial-energy craft borrowed as pattern only (section rhythm, labeled proof, process rules, a dark invitation).
+Editorial luxury, translated for a Chakan works. The site is a quiet monograph — ivory ground, magazine measure, hairline rules, photography treated as rounded plates — not a shop-drawing title block and not a real-estate listing. Calm authority for procurement: Webild-luxury silence and space, with industrial-energy craft borrowed as pattern only (punchy offer, labeled proof chips, four-step process, roadmap rows, accordion FAQ, a dark invitation).
 
 Terracotta is the one committed accent. It appears on primary actions, labels, and short ornaments. It does not own bands, bars, or chrome.
 
@@ -20,37 +20,34 @@ Terracotta is the one committed accent. It appears on primary actions, labels, a
 - `--terracotta` `#8b3f2f` — CTAs, labels, ornaments
 - `--night` `#12100e` — footer and closing invitation
 
-Neutrals are tinted toward warm dust and paper. No pure cool gray, no purple, no sky-blue gradient, no oxide primer fields, no energy-company green.
+Neutrals are tinted toward warm dust and paper. No energy-company green, no oxide primer fields.
 
 ## Type
 
-- Display: **Fraunces** (variable, opsz + wght; italic for asides and pull quotes) — soft old-style serif at high optical size. Weight 500. Tracking no tighter than -0.02em. Max ~6.6rem.
-- Body / UI: **Source Sans 3** (variable wght 200–900, italic) — humanist sans with a real text cut. `font-optical-sizing: auto`. Measure 70ch (65–75ch).
+- Display: **Archivo** (variable wdth + wght, italic) — high-end grotesque. Headlines ~750–800, slight stretch (108–112%), tracking about -0.025em. Short punchy H1.
+- Body / UI: **Source Sans 3** (variable wght) — exceptional humanist sans. `font-optical-sizing: auto`. Measure 70ch.
+- Labels: **IBM Plex Mono** (500) — proof chips, process numbers, FAQ plus, brand subtitle only.
 
-Self-hosted woff2, `font-display: swap`. No Inter, Arial, Geist, Space Grotesk, Libre Franklin, Barlow, Big Shoulders, condensed industrial display, or system UI as the brand voice.
+Self-hosted woff2, `font-display: swap`. No Inter, Arial, Fraunces, Cormorant, Big Shoulders, or system UI as the brand voice. English only — no Devanagari flourish.
 
 ## Form
 
-Hairlines, not frames. Photography is rounded (`1.6rem`). Primary actions are pills. Elevation is a 1px warm rule, not a card shadow. No nested cards. No icon-heading-text grids as structure. Headings carry the section; a short terracotta dash may precede them (not a text kicker).
+Hairlines, not frames. Photography is rounded (`1.6rem`). Primary actions are pills; ghost secondary sits beside them. No nested cards. No icon-heading-text grids as structure. A three-stroke terracotta marker (thin, not a copied logo) may precede a heading.
 
-Icons are 1.5px-stroke SVG in one family. No emoji. The wordmark is type only.
-
-Photographs are atmospheric stills — never presented as the Chakan works, never as client proof.
-
-Craft cues adapted from a premium industrial-energy monograph (not its brand): a four-cell proof register, four-movement process with a growing rule, numbered plant index, FAQ plus-mark, faint year watermark, dark closing invitation. Logo, name, and assets from that reference are not used.
+Craft cues adapted from a premium industrial-energy monograph (not its brand): four-up proof chips (Since 2014 / Zero PPM / Export markets / Process depth), a four-step process narrative, drawing/bay/desk roadmap rows, accordion FAQ, large phone and email on a dark invitation. Logo, name, and assets from that reference are not used.
 
 ## Motion
 
-Hero: staggered rise on type, image fade + ken-burns-lite. In-view reveals vary — rise, fade, or enter — so cards do not share one entrance. Process rules grow on the left. CTA hover lifts 2px and eases the arrow. Ease: `cubic-bezier(0.16, 1, 0.3, 1)`. `prefers-reduced-motion: reduce` cancels transform, delay, and loop. No bounce, elastic, or stroke-dash theatre.
+Hero: staggered rise, image fade + ken-burns-lite. In-view reveals vary (rise, fade, enter). Step cards stagger and grow a left-origin rule. FAQ plus rotates; open panel eases height. CTA hover lifts 2px. Ornament bars grow in sequence. Ease: `cubic-bezier(0.16, 1, 0.3, 1)`. `prefers-reduced-motion: reduce` cancels transform, delay, and loop.
 
 ## Chrome
 
-Selection: linen on charcoal. Focus: 2px terracotta outline, 3px offset. Scrollbars: night track, muted thumb. Caret: terracotta. Underline offset 0.2em.
+Selection: linen on charcoal. Focus: 2px terracotta outline, 3px offset. Scrollbars: night track, muted thumb. Caret: terracotta.
 
 ## Layout grammar
 
-Minimal sticky nav on ivory. First viewport: typography beside a rounded plate, then a labeled proof strip. Later passages alternate density: asymmetric intro, two product collections, four movements plus the plant index, a quote journal, a night invitation. Phone and quote stay in the header; a pill call bar appears on small screens.
+Compact sticky nav on ivory. First viewport: short H1, one thesis, rounded plate, quote + call. Then proof chips, asymmetric intro, two collections, four steps plus a short roadmap, quote journal, FAQ, night invitation with prominent phones and email.
 
 ## Anti-references
 
-Incumbent Pronext WordPress brochure. The previous shop-drawing / title-block world (Big Shoulders, oxide primer bands). Purple-to-blue SaaS. Glass. Gradient type. Inter. Icon-card triads. Hero-metric templates. Invented ISO badges and client-logo walls. Copied third-party marks. Suburban house listings that would recast the plant as a realtor.
+Incumbent Pronext WordPress brochure. Shop-drawing / title-block world. Purple-to-blue SaaS. Inter. Icon-card triads. Copied third-party marks. Suburban house listings.

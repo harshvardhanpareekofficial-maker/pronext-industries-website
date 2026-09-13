@@ -10,13 +10,13 @@ import "./globals.css";
 const display = localFont({
   src: [
     {
-      path: "./fonts/fraunces-latin-opsz-wght-normal.woff2",
-      weight: "400 700",
+      path: "./fonts/archivo-latin-wdth-wght-normal.woff2",
+      weight: "100 900",
       style: "normal",
     },
     {
-      path: "./fonts/fraunces-latin-opsz-wght-italic.woff2",
-      weight: "500 600",
+      path: "./fonts/archivo-latin-wdth-wght-italic.woff2",
+      weight: "100 900",
       style: "italic",
     },
   ],
@@ -41,6 +41,12 @@ const body = localFont({
   display: "swap",
 });
 
+const data = localFont({
+  src: [{ path: "./fonts/ibm-plex-mono-latin-500-normal.woff2", weight: "500", style: "normal" }],
+  variable: "--font-data",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -61,13 +67,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${data.variable}`}>
       {/*
-        THESIS: A quiet monograph for a Chakan works — editorial luxury with industrial-energy craft, not a shop-drawing and not a SaaS page.
-        OWN-WORLD: Ivory ground, charcoal type, terracotta on CTAs only, Fraunces (opsz) + Source Sans 3, rounded plates, pill actions.
+        THESIS: Ivory monograph for a Chakan works — Webild calm + industrial-energy craft, not a shop-drawing and not a SaaS page.
+        OWN-WORLD: Ivory ground, charcoal type, terracotta on CTAs, Archivo display + Source Sans 3 + IBM Plex Mono labels.
         STORY: Buyer sees what is made, the process, 2014 / zero PPM / named exports, then requests a quote or calls.
-        FIRST VIEWPORT: Typography-forward cinematic split, large serif offer, rising entrance, quote + call.
-        FORM: Webild luxury-RE calm + Kailash-style proof/process rhythm. User-pinned polish.
+        FIRST VIEWPORT: Punchy H1, one thesis, rounded plate, quote + call.
+        FORM: Webild luxury-RE whitespace + Kailash-style proof/process/FAQ/invite rhythm. User-pinned polish.
         FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
       */}
       <body>

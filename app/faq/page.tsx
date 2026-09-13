@@ -15,7 +15,7 @@ export default function FaqPage() {
   return (
     <>
       <PageHero
-        title="Questions buyers actually ask"
+        title="In plain terms"
         lede="Short answers from published plant facts. If a number is not on the incumbent site, it is not invented here."
       />
       <section className="section">

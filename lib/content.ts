@@ -56,10 +56,22 @@ export const processes = [
 ] as const;
 
 export const proofs = [
-  { label: "Works", value: "Kharabwadi, Tal-Khed, Chakan" },
-  { label: "Since", value: String(site.founded) },
-  { label: "Commitment", value: site.qualityClaim },
-  { label: "Destinations", value: site.exports.join(" · ") },
+  {
+    label: "Since 2014",
+    value: "One works in Kharabwadi, Tal-Khed, Chakan.",
+  },
+  {
+    label: "Zero PPM",
+    value: "The quality commitment the plant already publishes.",
+  },
+  {
+    label: "Export markets",
+    value: site.exports.join(" · "),
+  },
+  {
+    label: "Process depth",
+    value: "Laser, CNC brake, weld, CED + powder, plywood, CMM.",
+  },
 ] as const;
 
 export const movements = [
@@ -78,6 +90,24 @@ export const movements = [
   {
     name: "Crate",
     detail: "Export packing to the criteria named on the order, for the destinations already shipped.",
+  },
+] as const;
+
+export const stages = [
+  {
+    stage: "The drawing",
+    title: "Send what you have",
+    detail: "A sketch, sample, or packing list. Design and development for the local market is a listed capability.",
+  },
+  {
+    stage: "The bay",
+    title: "Held to the drawing",
+    detail: "Laser, CNC brake, fixtures, MIG/MAG, CED plus powder, plywood work, CMM — in the order a lot actually moves.",
+  },
+  {
+    stage: "The desk",
+    title: "A number that answers",
+    detail: `${site.hoursShort}. ${site.phones.map((p) => p.display).join(" / ")}. ${site.email}.`,
   },
 ] as const;
 
