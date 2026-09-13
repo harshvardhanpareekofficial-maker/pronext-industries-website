@@ -59,6 +59,8 @@ export const products = [
   {
     slug: "scaffolding",
     title: "Scaffolding components",
+    image: "/images/scaffolding.jpg",
+    imageAlt: "Scaffolding bay in silhouette against a dusk sky — atmospheric, not a photograph of the Chakan works.",
     lead: "Standards, ledgers, transoms, boards, brackets, and the small steel that decides whether a bay goes up square.",
     body: "We manufacture scaffolding components to the buyer’s drawing or a confirmed sample. The plant is set up for realization — laser, brake, fixtures, weld, coat — so a local contractor and an export consolidator can issue the same kind of RFQ: quantity, finish, packing, and a date.",
     points: [
@@ -71,6 +73,8 @@ export const products = [
   {
     slug: "formwork",
     title: "Formwork components",
+    image: "/images/formwork.jpg",
+    imageAlt: "Concrete corner and a form board in quiet daylight — atmospheric, not a photograph of the Chakan works.",
     lead: "Steel and plywood faces, walers, soldiers, and the fitment work that shows up as a clean pour or a site argument.",
     body: "Formwork work here includes plywood cutting, fitment, sealant, and riveting alongside the steel. That matters when a panel will be reused and the edge is the first thing that fails.",
     points: [

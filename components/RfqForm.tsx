@@ -58,14 +58,13 @@ export function RfqForm() {
   if (sent && !action) {
     return (
       <div className="ok" role="status">
-        Your mail client should open with the RFQ. If it does not, write {site.email} or call {site.phones[0].display}.
+        Your mail client should open with the request. If it does not, write {site.email} or call {site.phones[0].display}.
       </div>
     );
   }
 
   return (
     <form className="rfq" action={action} method={action ? "POST" : "dialog"} onSubmit={onSubmit} noValidate>
-      <p className="data">RFQ-01 · five fields</p>
       <label htmlFor="rfq-name">Name</label>
       <input
         id="rfq-name"
@@ -118,10 +117,10 @@ export function RfqForm() {
       />
       {errors.need ? <p className="error">{errors.need}</p> : null}
 
-      <button className="btn" type="submit" style={{ marginTop: "1.2rem", width: "100%" }}>
+      <button className="btn" type="submit" style={{ marginTop: "1.6rem" }}>
         Send request
       </button>
-      <p className="data" style={{ marginTop: "0.9rem" }}>
+      <p className="quiet" style={{ marginTop: "0.95rem", fontSize: "0.9rem" }}>
         {action
           ? "Submits to the plant inbox via Formspree."
           : `Opens mail to ${site.email}. Set NEXT_PUBLIC_FORMSPREE_ID to post without a mail client.`}

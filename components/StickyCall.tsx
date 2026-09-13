@@ -6,7 +6,7 @@ export function StickyCall() {
   return (
     <a className="sticky-call" href={phone.href}>
       <IconPhone />
-      Call the plant
+      Call the works
     </a>
   );
 }

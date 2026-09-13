@@ -49,7 +49,7 @@ If you create the service in the dashboard instead of Blueprint: New → Static 
 
 | Path | Content |
 | --- | --- |
-| `/` | Offer, process register, trust, products, reviews, close |
+| `/` | Offer, intro, collections, plant index, reviews, close |
 | `/products/` | Scaffolding and formwork |
 | `/manufacturing/` | Plant sequence |
 | `/quality/` | Zero PPM, packing, named export regions |

@@ -13,7 +13,6 @@ export default function FaqPage() {
   return (
     <>
       <PageHero
-        drawing="PN-FAQ-001"
         title="Questions buyers actually ask"
         lede="Short answers from published plant facts. If a number is not on the incumbent site, it is not invented here."
       />
@@ -25,7 +24,7 @@ export default function FaqPage() {
               <p>{item.a}</p>
             </details>
           ))}
-          <p style={{ marginTop: "2rem" }}>
+          <p style={{ marginTop: "2.2rem" }}>
             Still a drawing in your inbox? <Link href="/contact/">Send the RFQ</Link>.
           </p>
         </div>

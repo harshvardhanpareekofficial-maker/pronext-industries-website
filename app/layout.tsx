@@ -9,8 +9,10 @@ import "./globals.css";
 
 const display = localFont({
   src: [
-    { path: "./fonts/big-shoulders-display-latin-800-normal.woff2", weight: "800" },
-    { path: "./fonts/big-shoulders-display-latin-900-normal.woff2", weight: "900" },
+    { path: "./fonts/cormorant-garamond-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/cormorant-garamond-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/cormorant-garamond-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/cormorant-garamond-latin-500-italic.woff2", weight: "500", style: "italic" },
   ],
   variable: "--font-display",
   display: "swap",
@@ -18,18 +20,11 @@ const display = localFont({
 
 const body = localFont({
   src: [
-    { path: "./fonts/barlow-latin-400-normal.woff2", weight: "400" },
-    { path: "./fonts/barlow-latin-500-normal.woff2", weight: "500" },
-    { path: "./fonts/barlow-latin-600-normal.woff2", weight: "600" },
-    { path: "./fonts/barlow-latin-700-normal.woff2", weight: "700" },
+    { path: "./fonts/libre-franklin-latin-400-normal.woff2", weight: "400" },
+    { path: "./fonts/libre-franklin-latin-500-normal.woff2", weight: "500" },
+    { path: "./fonts/libre-franklin-latin-600-normal.woff2", weight: "600" },
   ],
   variable: "--font-body",
-  display: "swap",
-});
-
-const data = localFont({
-  src: [{ path: "./fonts/azeret-mono-latin-500-normal.woff2", weight: "500" }],
-  variable: "--font-data",
   display: "swap",
 });
 
@@ -53,13 +48,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${data.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       {/*
-        THESIS: A shop-drawing issued by a Chakan works, not a brochure and not a SaaS hero-metric page.
-        OWN-WORLD: Concrete/sheet grounds, oxide primer bands, olive-black ink, Big Shoulders Display + Barlow + Azeret Mono, ruled title blocks.
+        THESIS: A quiet monograph for a Chakan works — editorial luxury, not a shop-drawing and not a SaaS page.
+        OWN-WORLD: Warm bone, charcoal type, terracotta on CTAs only, Cormorant Garamond + Libre Franklin, hairline grids.
         STORY: Buyer sees what is made, the process, 2014 / zero PPM / named exports, then requests a quote or calls.
-        FIRST VIEWPORT: Dark steel bay, huge condensed offer, process register, quote + call. One bayline draw.
-        FORM: Title-block / shop-drawing. User-pinned industrial precision; unattended build.
+        FIRST VIEWPORT: Typography-forward cinematic split, large serif offer, quote + call.
+        FORM: Editorial luxury / curated collections. User-pinned Webild luxury-RE cue adapted to industrial B2B.
         FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
       */}
       <body>
