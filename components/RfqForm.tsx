@@ -13,7 +13,11 @@ type Fields = {
 
 const empty: Fields = { name: "", company: "", email: "", phone: "", need: "" };
 
-export function RfqForm() {
+type Props = {
+  glass?: boolean;
+};
+
+export function RfqForm({ glass = false }: Props) {
   const [values, setValues] = useState<Fields>(empty);
   const [errors, setErrors] = useState<Partial<Fields>>({});
   const [sent, setSent] = useState(false);
@@ -64,67 +68,78 @@ export function RfqForm() {
   }
 
   return (
-    <form className="rfq" action={action} method={action ? "POST" : "dialog"} onSubmit={onSubmit} noValidate>
-      <label htmlFor="rfq-name">Name</label>
-      <input
-        id="rfq-name"
-        name="name"
-        autoComplete="name"
-        value={values.name}
-        onChange={(e) => setValues({ ...values, name: e.target.value })}
-      />
-      {errors.name ? <p className="error">{errors.name}</p> : null}
-
-      <label htmlFor="rfq-company">Company</label>
-      <input
-        id="rfq-company"
-        name="company"
-        autoComplete="organization"
-        value={values.company}
-        onChange={(e) => setValues({ ...values, company: e.target.value })}
-      />
-      {errors.company ? <p className="error">{errors.company}</p> : null}
-
-      <label htmlFor="rfq-email">Email</label>
-      <input
-        id="rfq-email"
-        name="email"
-        type="email"
-        autoComplete="email"
-        value={values.email}
-        onChange={(e) => setValues({ ...values, email: e.target.value })}
-      />
-      {errors.email ? <p className="error">{errors.email}</p> : null}
-
-      <label htmlFor="rfq-phone">Phone</label>
-      <input
-        id="rfq-phone"
-        name="phone"
-        type="tel"
-        autoComplete="tel"
-        value={values.phone}
-        onChange={(e) => setValues({ ...values, phone: e.target.value })}
-      />
-      {errors.phone ? <p className="error">{errors.phone}</p> : null}
-
-      <label htmlFor="rfq-need">Need</label>
-      <textarea
-        id="rfq-need"
-        name="need"
-        value={values.need}
-        onChange={(e) => setValues({ ...values, need: e.target.value })}
-        placeholder="Scaffolding or formwork, quantity, finish, packing, drawing or sample."
-      />
-      {errors.need ? <p className="error">{errors.need}</p> : null}
-
-      <button className="btn" type="submit" style={{ marginTop: "1.6rem" }}>
-        Send request
-      </button>
-      <p className="quiet" style={{ marginTop: "0.95rem", fontSize: "0.9rem" }}>
-        {action
-          ? "Submits to the plant inbox via Formspree."
-          : `Opens mail to ${site.email}. Set NEXT_PUBLIC_FORMSPREE_ID to post without a mail client.`}
-      </p>
+    <form className={glass ? "rfq rfq-glass" : "rfq"} action={action} method={action ? "POST" : "dialog"} onSubmit={onSubmit} noValidate>
+      <div>
+        <label htmlFor="rfq-name">Name</label>
+        <input
+          id="rfq-name"
+          name="name"
+          autoComplete="name"
+          placeholder="Your name"
+          value={values.name}
+          onChange={(e) => setValues({ ...values, name: e.target.value })}
+        />
+        {errors.name ? <p className="error">{errors.name}</p> : null}
+      </div>
+      <div>
+        <label htmlFor="rfq-email">Email</label>
+        <input
+          id="rfq-email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          placeholder="Your email"
+          value={values.email}
+          onChange={(e) => setValues({ ...values, email: e.target.value })}
+        />
+        {errors.email ? <p className="error">{errors.email}</p> : null}
+      </div>
+      <div>
+        <label htmlFor="rfq-company">Company</label>
+        <input
+          id="rfq-company"
+          name="company"
+          autoComplete="organization"
+          placeholder="Company"
+          value={values.company}
+          onChange={(e) => setValues({ ...values, company: e.target.value })}
+        />
+        {errors.company ? <p className="error">{errors.company}</p> : null}
+      </div>
+      <div>
+        <label htmlFor="rfq-phone">Phone</label>
+        <input
+          id="rfq-phone"
+          name="phone"
+          type="tel"
+          autoComplete="tel"
+          placeholder="Phone"
+          value={values.phone}
+          onChange={(e) => setValues({ ...values, phone: e.target.value })}
+        />
+        {errors.phone ? <p className="error">{errors.phone}</p> : null}
+      </div>
+      <div className="rfq-wide">
+        <label htmlFor="rfq-need">Need</label>
+        <textarea
+          id="rfq-need"
+          name="need"
+          placeholder="Tell us about the parts, finish, quantity, or drawing."
+          value={values.need}
+          onChange={(e) => setValues({ ...values, need: e.target.value })}
+        />
+        {errors.need ? <p className="error">{errors.need}</p> : null}
+      </div>
+      <div className="rfq-wide">
+        <button className={glass ? "btn btn-cream" : "btn"} type="submit">
+          Send request
+        </button>
+        <p className="quiet" style={{ marginTop: "0.75rem", fontSize: "0.82rem" }}>
+          {action
+            ? "Submits to the plant inbox via Formspree."
+            : `Opens mail to ${site.email}.`}
+        </p>
+      </div>
     </form>
   );
 }

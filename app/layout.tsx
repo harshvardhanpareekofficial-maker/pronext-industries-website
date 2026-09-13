@@ -7,43 +7,14 @@ import { StickyCall } from "@/components/StickyCall";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const display = localFont({
+const sans = localFont({
   src: [
-    {
-      path: "./fonts/archivo-latin-wdth-wght-normal.woff2",
-      weight: "100 900",
-      style: "normal",
-    },
-    {
-      path: "./fonts/archivo-latin-wdth-wght-italic.woff2",
-      weight: "100 900",
-      style: "italic",
-    },
+    { path: "./fonts/plus-jakarta-sans-latin-300-normal.woff2", weight: "300" },
+    { path: "./fonts/plus-jakarta-sans-latin-400-normal.woff2", weight: "400" },
+    { path: "./fonts/plus-jakarta-sans-latin-500-normal.woff2", weight: "500" },
+    { path: "./fonts/plus-jakarta-sans-latin-600-normal.woff2", weight: "600" },
   ],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const body = localFont({
-  src: [
-    {
-      path: "./fonts/source-sans-3-latin-wght-normal.woff2",
-      weight: "200 900",
-      style: "normal",
-    },
-    {
-      path: "./fonts/source-sans-3-latin-wght-italic.woff2",
-      weight: "200 900",
-      style: "italic",
-    },
-  ],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const data = localFont({
-  src: [{ path: "./fonts/ibm-plex-mono-latin-500-normal.woff2", weight: "500", style: "normal" }],
-  variable: "--font-data",
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -67,13 +38,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${data.variable}`}>
+    <html lang="en" className={sans.variable}>
       {/*
-        THESIS: Ivory monograph for a Chakan works — Webild calm + industrial-energy craft, not a shop-drawing and not a SaaS page.
-        OWN-WORLD: Ivory ground, charcoal type, terracotta on CTAs, Archivo display + Source Sans 3 + IBM Plex Mono labels.
+        THESIS: Webild luxury-RE grammar for a Chakan works — photography and ivory, not a shop-drawing.
+        OWN-WORLD: Ivory, charcoal pills, espresso overlays, Plus Jakarta Sans, listing cards, glass RFQ.
         STORY: Buyer sees what is made, the process, 2014 / zero PPM / named exports, then requests a quote or calls.
-        FIRST VIEWPORT: Punchy H1, one thesis, rounded plate, quote + call.
-        FORM: Webild luxury-RE whitespace + Kailash-style proof/process/FAQ/invite rhythm. User-pinned polish.
+        FIRST VIEWPORT: Full-bleed hero, left overlay, two-line headline, paired pills.
+        FORM: Observed Webild template (hero / about plate / properties grid / glass contact / ivory footer).
         FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
       */}
       <body>

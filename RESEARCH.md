@@ -2,7 +2,7 @@
 
 ## Visual cue
 
-The UI world is adapted from Webild’s luxury real-estate template language ([luxury-real-estate](https://www.webild.io/templates/luxury-real-estate)): editorial luxury, cinematic typography-forward hero, photography-led passages, product families shown as curated collections, minimal chrome, quiet motion. That template is a **visual cue**, not a sector cue. Copy, IA, proof, and buyer path stay industrial B2B — scaffolding and formwork procurement from Chakan. No property-listing language, no invented lifestyle claims, no house-for-sale photography.
+The UI world matches the observed Webild luxury-real-estate template ([luxury-real-estate](https://www.webild.io/templates/luxury-real-estate)): full-bleed hero with a left espresso overlay and paired pill CTAs; centered about band with one wide rounded plate; products as a two-column listing grid (image above, short caption below); contact as a dark photograph plus a translucent warm-brown form; ivory multi-column footer. That template is a **visual cue**, not a sector cue. Copy, IA, proof, and buyer path stay industrial B2B — scaffolding and formwork procurement from Chakan. Villa/listing language is translated to product collections. No invented lifestyle claims; photographs are atmospheric, not the works.
 
 Category research below is unchanged: manufacturer-site patterns for trust, RFQ, and export proof.
 
